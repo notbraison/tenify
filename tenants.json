@@ -1,0 +1,21 @@
+[
+
+{"id":1, "name":"rebecca musya" , "houseNumber":1 , "phoneNumber":71234567 },
+{"id":2, "name":"collins" , "houseNumber":2 , "phoneNumber":"0758688330" },
+{"id":3, "name":"byicaza Justine" , "houseNumber":3 , "phoneNumber":"0712113359" },
+{"id":4, "name":"rebecca musya" , "houseNumber":10 , "phoneNumber":71234567 },
+{"id":5, "name":["Rugarira Diodone"," Pacifique Kazungu"] , "houseNumber":11 , "phoneNumber":["0718460778","0732526839","0705906239"] },
+{"id":6, "name":["Brian Shivanda"," Evalyne" ], "houseNumber":12 , "phoneNumber":["0790502686","0726012401"] },
+{"id":7, "name":"Jacinta Ngugi" , "houseNumber":20 , "phoneNumber":"0708949521" },
+{"id":8, "name":["Muhiza Rukema","Oliver Nsabiyer"] , "houseNumber":21 , "phoneNumber":["0706587342","0703579430"] },
+{"id":9, "name":["Moses Taabu","Sheila Wangeci" ], "houseNumber":22 , "phoneNumber":["0728178825","0702054864"] },
+{"id":10, "name":"mwaura john" , "houseNumber":30 , "phoneNumber":"0742603367" },
+{"id":11, "name":"office" , "houseNumber":31 , "phoneNumber":["0721329988","0721263955"] },
+{"id":12, "name":"kevin kahondo" , "houseNumber":32 , "phoneNumber": ["0720947917","0702910301"]},
+{"id":13, "name":"Hilda and Wycliff", "houseNumber":33 , "phoneNumber":["0708952647","0701510137"] },
+{"id":14, "name":"Ater machol" , "houseNumber":40 , "phoneNumber":["0706462775","0112037783"] },
+{"id":15, "name":"Francois Sebikameroa" , "houseNumber":41 , "phoneNumber":["0771104243","0710156513"] },
+{"id":16, "name":"Lewis Kavoi Xavier" , "houseNumber":42 , "phoneNumber":"0759001404"},
+{"id":17, "name":"Innocent Nwachukwu " , "houseNumber":50 , "phoneNumber":["0754345600","0790172515","0797127779"] }
+    
+]
