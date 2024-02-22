@@ -14,7 +14,15 @@ fs.readFile('tenants.json', 'utf8', (err, data) => {
     function updatePhone(n,p){
     tenants.forEach(tenant => {
         if (tenant.houseNumber === n) {
-            tenant.phoneNumber = p; // Update phone number for tenant with id 1
+            tenant.phoneNumber = p; // Update phone number for tenant with id n
+        }
+    });    
+    }
+
+    function updateTenantName(n,p){
+    tenants.forEach(tenant => {
+        if (tenant.houseNumber === n) {
+            tenant.name = p; // Update name for tenant with given house number
         }
     });    
     }
@@ -29,3 +37,4 @@ fs.readFile('tenants.json', 'utf8', (err, data) => {
         console.log('File updated successfully');
     });
 });
+
