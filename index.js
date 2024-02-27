@@ -1,30 +1,49 @@
 const excel = require('exceljs');
+let hb = [];
 
-function houseAndBill(filePath, columns, rows, worksheet) {
+
+async function houseAndBill(filePath, columns, rows, worksheet) {
     const wb = new excel.Workbook();
-    
+
     columns = processColumn(columns);
     const { start, end } = processRows(rows);
-       
-    wb.xlsx.readFile(filePath)
-        .then(() => {
-            const ws = wb.getWorksheet(worksheet);
 
-            iterateColumns(ws, start, end, columns); 
-        })
-        .catch(err => {
-            console.error("Error:", err.message);
-        });
+    try {
+        await wb.xlsx.readFile(filePath);
+        const ws = wb.getWorksheet(worksheet);
+
+        iterateColumns(ws, start, end, columns);
+        console.log(hb); // Log the array containing all cell values
+    } catch (err) {
+        console.error("Error:", err.message);
+    }
 }
 
 function iterateColumns(ws, start, end, lettersArray) {
     for (let rowIndex = start; rowIndex <= end; rowIndex++) {
         for (let letter of lettersArray) {
             const cell = ws.getCell(`${letter}${rowIndex}`);
-            console.log(`Processing cell ${letter}${rowIndex}: ${typeof cell.value === 'string' ? cell.value : cell.value.result}`);
+            let cellValue;
+            
+            if (typeof cell.value === 'string') {
+                // Handle string values
+                cellValue = cell.value;
+            } else if (typeof cell.value === 'object' && 'result' in cell.value) {
+                // Handle numeric values with a result property
+                cellValue = cell.value.result;
+            } else {
+                // Handle other types of values (e.g., undefined)
+                cellValue = cell.value;
+            }
+
+            //console.log(`Cell: ${letter}${rowIndex}: ${cellValue}`);
+            hb.push(`Cell: ${letter}${rowIndex}: ${cellValue}`);
+           //console.log(hb)           
+
         }
     }
 }
+
 
 function processRows(input) {
     let start, end;
@@ -91,3 +110,4 @@ const rows = '3-19'; // Example row range
 const worksheet = "December";
 
 houseAndBill(filePath, columns, rows, worksheet);
+console.log(hb)
