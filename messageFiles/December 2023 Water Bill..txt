@@ -1,0 +1,17 @@
+House : 01 SHOP A: 330
+House : 2: 770
+House : 3: 1430
+House : 10: 110
+House : 11: 770
+House : 12: 1210
+House : 20: 110
+House : 21: 660
+House : 22: 1430
+House : 30: 330
+House : 31: 440
+House : 32: 330
+House : 33: 440
+House : 40: 880
+House : 41: 990
+House : 42: 330
+House : 50: 2310
