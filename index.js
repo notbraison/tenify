@@ -1,5 +1,5 @@
 const excel = require('exceljs');
-let hb = [];
+let tb = new Map();//test will delete after
 
 
 async function houseAndBill(filePath, columns, rows, worksheet) {
@@ -13,7 +13,8 @@ async function houseAndBill(filePath, columns, rows, worksheet) {
         const ws = wb.getWorksheet(worksheet);
 
         iterateColumns(ws, start, end, columns);
-        console.log(hb); // Log the array containing all cell values
+        console.log(tb); // Log the map containing all cell values
+        return tb;
     } catch (err) {
         console.error("Error:", err.message);
     }
@@ -21,6 +22,7 @@ async function houseAndBill(filePath, columns, rows, worksheet) {
 
 function iterateColumns(ws, start, end, lettersArray) {
     for (let rowIndex = start; rowIndex <= end; rowIndex++) {
+        let a,b;
         for (let letter of lettersArray) {
             const cell = ws.getCell(`${letter}${rowIndex}`);
             let cellValue;
@@ -36,9 +38,15 @@ function iterateColumns(ws, start, end, lettersArray) {
                 cellValue = cell.value;
             }
 
-            //console.log(`Cell: ${letter}${rowIndex}: ${cellValue}`);
-            hb.push(`Cell: ${letter}${rowIndex}: ${cellValue}`);
-           //console.log(hb)           
+            if(letter  ==='B'){
+                cellValue=String(cellValue)
+                 a = 'House : '+ cellValue
+            }
+            if(letter  ==='H'){
+                b =  cellValue
+            }
+
+            tb.set(a,b)     
 
         }
     }
@@ -110,4 +118,4 @@ const rows = '3-19'; // Example row range
 const worksheet = "December";
 
 houseAndBill(filePath, columns, rows, worksheet);
-console.log(hb)
+
